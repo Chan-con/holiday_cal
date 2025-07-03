@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday_cal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title-bar">
+        <div class="title-bar-controls">
+            <button id="minimizeBtn" class="window-btn minimize-btn">－</button>
+            <button id="closeBtn" class="window-btn close-btn">×</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header class="header">
+            <button id="prevMonth" class="nav-btn">◀</button>
+            <h1 id="monthYear" class="month-year"></h1>
+            <button id="nextMonth" class="nav-btn">▶</button>
+        </header>
+        
+        <div class="controls">
+            <button id="exportBtn" class="export-btn">✨ カレンダーを保存</button>
+            <button id="clearBtn" class="clear-btn">🧹 リセット</button>
+        </div>
+        
+        <div class="counters">
+            <div class="counter">
+                <span class="counter-label">🌸 お休み:</span>
+                <span id="holidayCount" class="counter-value">0</span>
+            </div>
+            <div class="counter">
+                <span class="counter-label">💼 お仕事:</span>
+                <span id="jobdayCount" class="counter-value">0</span>
+            </div>
+        </div>
+        
+        <div id="calendar" class="calendar">
+            <div class="calendar-header">
+                <div class="day-header">日</div>
+                <div class="day-header">月</div>
+                <div class="day-header">火</div>
+                <div class="day-header">水</div>
+                <div class="day-header">木</div>
+                <div class="day-header">金</div>
+                <div class="day-header">土</div>
+            </div>
+            <div id="calendarGrid" class="calendar-grid">
+                <!-- Calendar days will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>
