@@ -390,16 +390,17 @@ class HolidayCalendar {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            font-weight: 400;
+            font-size: 48px;
+            font-weight: 700;
             background: white;
+            padding: 8px;
         `;
         
         if (isOtherMonth) {
             dayElement.style.color = '#ddd';
         } else if (isHoliday) {
             dayElement.style.color = '#f56565';
-            dayElement.style.fontWeight = '600';
+            dayElement.style.fontWeight = '800';
             dayElement.style.backgroundImage = `
                 linear-gradient(45deg, transparent 48%, rgba(245, 101, 101, 0.8) 49.5%, rgba(245, 101, 101, 0.8) 50.5%, transparent 52%),
                 linear-gradient(-45deg, transparent 48%, rgba(245, 101, 101, 0.8) 49.5%, rgba(245, 101, 101, 0.8) 50.5%, transparent 52%)
@@ -408,7 +409,7 @@ class HolidayCalendar {
             dayElement.style.backgroundRepeat = 'no-repeat';
         } else if (isWorkDay) {
             dayElement.style.color = '#74b9ff';
-            dayElement.style.fontWeight = '500';
+            dayElement.style.fontWeight = '700';
         } else {
             dayElement.style.color = '#7f8c8d';
         }
