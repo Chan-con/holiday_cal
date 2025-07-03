@@ -112,6 +112,16 @@ class HolidayCalendar {
                 dayElement.classList.add('today');
             }
             
+            // 日本の祝日チェック
+            const isJapaneseHoliday = this.isJapaneseHoliday(year, month, day);
+            if (isJapaneseHoliday) {
+                dayElement.classList.add('japanese-holiday');
+                const holidayMark = document.createElement('div');
+                holidayMark.className = 'holiday-mark';
+                holidayMark.textContent = '🎌';
+                dayElement.appendChild(holidayMark);
+            }
+            
             if (dayOfWeek === 0) {
                 dayElement.classList.add('weekend', 'sunday');
             } else if (dayOfWeek === 6) {
@@ -416,6 +426,17 @@ class HolidayCalendar {
         
         dayElement.textContent = day;
         return dayElement;
+    }
+    
+    isJapaneseHoliday(year, month, day) {
+        try {
+            const HolidayJP = require('@holiday-jp/holiday_jp');
+            const date = new Date(year, month, day);
+            return HolidayJP.isHoliday(date);
+        } catch (error) {
+            console.error('祝日ライブラリのエラー:', error);
+            return false;
+        }
     }
 }
 

@@ -311,6 +311,35 @@ body {
     color: #fd79a8;
 }
 
+.calendar-day.japanese-holiday {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+    border: 2px solid #fed7d7;
+}
+
+.calendar-day.japanese-holiday.holiday {
+    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+    color: white;
+    font-weight: 600;
+    border: 2px solid #fd79a8;
+    box-shadow: 0 4px 15px rgba(253, 121, 168, 0.4);
+}
+
+.calendar-day.weekend.holiday {
+    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+    color: white;
+    font-weight: 600;
+    border: 2px solid #fd79a8;
+    box-shadow: 0 4px 15px rgba(253, 121, 168, 0.4);
+}
+
+.holiday-mark {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 10px;
+    line-height: 1;
+}
+
 @media (max-width: 480px) {
     .container {
         margin: 35px 10px 10px;
