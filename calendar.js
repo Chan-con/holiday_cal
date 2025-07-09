@@ -6,7 +6,7 @@ class HolidayCalendar {
             '1月', '2月', '3月', '4月', '5月', '6月',
             '7月', '8月', '9月', '10月', '11月', '12月'
         ];
-        this.dayNames = ['日', '月', '火', '水', '木', '金', '土'];
+        this.dayNames = ['月', '火', '水', '木', '金', '土', '日'];
         
         this.loadData();
         this.init();
@@ -68,7 +68,8 @@ class HolidayCalendar {
         const prevMonth = new Date(year, month - 1, 0);
         const daysInPrevMonth = prevMonth.getDate();
         
-        for (let i = firstDayOfWeek - 1; i >= 0; i--) {
+        const adjustedFirstDayOfWeek = (firstDayOfWeek + 6) % 7;
+        for (let i = adjustedFirstDayOfWeek - 1; i >= 0; i--) {
             const dayElement = this.createDayElement(
                 daysInPrevMonth - i, 
                 year, 
@@ -357,7 +358,8 @@ class HolidayCalendar {
         // 前月の日付
         const prevMonth = new Date(year, month - 1, 0);
         const daysInPrevMonth = prevMonth.getDate();
-        for (let i = firstDayOfWeek - 1; i >= 0; i--) {
+        const adjustedFirstDayOfWeek = (firstDayOfWeek + 6) % 7;
+        for (let i = adjustedFirstDayOfWeek - 1; i >= 0; i--) {
             const dayElement = this.createExportDayElement(
                 daysInPrevMonth - i, 
                 year, 
